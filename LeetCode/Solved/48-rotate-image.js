@@ -6,9 +6,9 @@
  * @param {number[][]} matrix // The matrix needs to be identical in height and width
  * @return {void} Do not return anything, modify matrix in-place instead.
  */
- var rotate = function(matrix) {
+ const rotate = matrix => {
   // the height/width of the matrix
-  const N = matrix.length;
+  const N = matrix.length
   
   // Step 1:
   /* transposes the matrix (turns rows into columns)
@@ -27,12 +27,12 @@
              [ 7 , 8, 9]       [3,  8 , 9]        [3, 6, (9)]*/
       for (let col=row; col<N; col++) {
           // temporarily save the row/column value before overwriting it (swapping)
-          const temp = matrix[row][col];
+          const temp = matrix[row][col]
           
           // row value becomes the column value
-          matrix[row][col] = matrix[col][row];
+          matrix[row][col] = matrix[col][row]
           // column value becomes the row value
-          matrix[col][row] = temp;
+          matrix[col][row] = temp
       }
   }
   
@@ -48,12 +48,12 @@
       // col<(N/2) because we're walking from each end of the array towards the middle
       for (let col=0; col<(N/2); col++) {
           // temporarily save the first value before overwriting it (swapping)
-          const temp = matrix[row][col];
+          const temp = matrix[row][col]
           
           // first value becomes last value
-          matrix[row][col] = matrix[row][N-1-col];
+          matrix[row][col] = matrix[row][N-1-col]
           // last value becomes first value
-          matrix[row][N-1-col] = temp;
+          matrix[row][N-1-col] = temp
       }
   }
-};
+}

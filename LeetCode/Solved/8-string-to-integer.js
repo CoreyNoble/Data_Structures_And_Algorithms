@@ -23,7 +23,7 @@
     }
     
     // Remove any beginning whitespace from the string.
-    var string = s.trimStart()
+    const string = s.trimStart()
     // Stores the number we retrieve.
     let numberArray = []
     
@@ -56,8 +56,8 @@
     }
     
     // Determine upper/lower bounds
-    const INT_MAX = Math.pow(2, 31) - 1;
-    const INT_MIN = Math.pow(-2, 31);
+    const INT_MAX = Math.pow(2, 31) - 1
+    const INT_MIN = Math.pow(-2, 31)
     
     // Convert numberArray into a number
     let number = parseInt(numberArray.join(''))

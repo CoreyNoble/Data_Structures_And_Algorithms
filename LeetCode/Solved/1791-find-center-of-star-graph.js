@@ -8,7 +8,7 @@
     if (!edges || edges.length < 2) return 0
     
     // Saves the node that re-occurs on every edge.
-    let consistentNode = 0;
+    let consistentNode = 0
     
     // Find the node that exists on the both the first and second edge.
     if (edges[0][0] === edges[1][0] ||

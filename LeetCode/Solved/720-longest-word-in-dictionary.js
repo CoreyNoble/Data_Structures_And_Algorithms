@@ -10,7 +10,7 @@
  * @param {string[]} words
  * @return {string}
  */
- const longestWord = (words) => {
+ const longestWord = words => {
   // Stores the words we've encountered.
   const dict = {}
   // Will store the result if we find one.
@@ -39,4 +39,4 @@
   
   // Found the longest valid word.
   return result
-};
+}

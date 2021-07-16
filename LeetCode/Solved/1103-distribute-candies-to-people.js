@@ -31,7 +31,7 @@
       for (let i = 0; i < num_people; i++) {    
           // The person doesn't yet exist in the dictionary, initialise them.
           if (!distributedCandies[i]) {
-              distributedCandies[i] = 0;
+              distributedCandies[i] = 0
           }
 
           // Calculate how many candies to give to the current person.
