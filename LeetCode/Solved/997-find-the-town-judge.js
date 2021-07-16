@@ -7,7 +7,7 @@
                             // In this example, 1 trusts 3, 2 trusts 3, 3 trusts nobody.
 * @return {number} // Either the person that is the judge, or -1 if there is no judge.
 */
-var findJudge = function(n, trust) {
+const findJudge = (n, trust) => {
   // Handle edge cases with inputs.
   // No comparisons, only one person.
   if (!trust.length && n === 1) return 1
@@ -40,7 +40,7 @@ var findJudge = function(n, trust) {
                   trustScores[nextPerson] = trustScores[nextPerson] + 1
               }
           }
-      });
+      })
   }
   
   // O(n) loop over each persons' trust score.
@@ -53,5 +53,5 @@ var findJudge = function(n, trust) {
   }
   
   // Nobody is the Judge.
-  return -1;
-};
+  return -1
+}

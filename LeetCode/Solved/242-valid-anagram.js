@@ -45,4 +45,4 @@
   
   // Both strings are anagrams of eachother.
   return true    
-};
+}

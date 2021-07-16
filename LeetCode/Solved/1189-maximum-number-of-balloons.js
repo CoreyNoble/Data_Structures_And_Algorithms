@@ -3,9 +3,9 @@
  * @param {string} text
  * @return {number}
  */
- const maxNumberOfBalloons = (text) => {
+ const maxNumberOfBalloons = text => {
     // Edge case: No text.
-    if (!text) return 0;
+    if (!text) return 0
 
     /* Create a dictionary of keys that hold the characters in 'balloon'.
        Initialise each value to 0. */
@@ -14,7 +14,7 @@
     // O(n) loop over every character in the string of text.
     for (let i=0; i < text.length; i++) {
         // The character.
-        const char = text[i];
+        const char = text[i]
         
         // The character exists within the dictionary.
         if (dict[char] !== undefined) {
@@ -29,5 +29,5 @@
                     dict['a'], 
                     Math.floor(dict['l'] / 2), 
                     Math.floor(dict['o'] / 2), 
-                    dict['n']);
-};
+                    dict['n'])
+}

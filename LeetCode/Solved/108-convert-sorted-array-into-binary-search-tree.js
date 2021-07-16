@@ -1,6 +1,6 @@
 /**
  * Definition for a binary tree node.
- * function TreeNode(val, left, right) {
+ * const TreeNode = (val, left, right) => {
  *     this.val = (val===undefined ? 0 : val)
  *     this.left = (left===undefined ? null : left)
  *     this.right = (right===undefined ? null : right)
@@ -12,9 +12,9 @@
  * @param {number[]} nums
  * @return {TreeNode}
  */
- const sortedArrayToBST = function(nums) {
+ const sortedArrayToBST = nums => {
   // No values inside of the array, return nothing
-  if (nums.length === 0) return null;
+  if (nums.length === 0) return null
   
   /* Return the result from the constructTreeFromArray recursive helper method.
      We initialise this recursive method by sending:
@@ -23,8 +23,8 @@
       - right: nums.length-1 (highest bound)
       --- 0 and .length-1 account for the 0 based incicies
   */
-  return constructTreeFromArray(nums, 0, nums.length-1);
-};
+  return constructTreeFromArray(nums, 0, nums.length-1)
+}
 
 /**
 * Converts an array into a binary tree
@@ -33,12 +33,12 @@
 * @param {int} right  // the right bound
 * @return {TreeNode} // { val: int, left: int, right: int }
 */
-const constructTreeFromArray = function(nums, left, right) {
+const constructTreeFromArray = (nums, left, right) => {
   // Exit if the left and right bounds overlap
-  if (left > right) return null;
+  if (left > right) return null
   
   // Find the middle value between the left and right bounds, accounting for integer overflow.
-  const midpoint = Math.floor(left + (right - left) / 2);
+  const midpoint = Math.floor(left + (right - left) / 2)
   
   // Create the TreeNode, and recursively create the .left and .right nodes
   const node = {
@@ -50,8 +50,8 @@ const constructTreeFromArray = function(nums, left, right) {
       /* Recurse to create the right nodes in the tree, the right bound remains the same,
          while the left bound is the midpoint+1 */
       right: constructTreeFromArray(nums, midpoint+1, right),
-  };
+  }
      
   // Return the binary tree
-  return node;
+  return node
 }

@@ -1,6 +1,6 @@
 /**
  * Definition for a binary tree node.
- * function TreeNode(val, left, right) {
+ * const TreeNode = (val, left, right) => {
  *     this.val = (val===undefined ? 0 : val)
  *     this.left = (left===undefined ? null : left)
  *     this.right = (right===undefined ? null : right)
@@ -11,7 +11,7 @@
  * @param {TreeNode} root
  * @return {number[]}
  */
- const findMode = (root) => {
+ const findMode = root => {
   // Edge case: Root doesn't exist, no modes exist.
   if (!root) return []
 
@@ -45,10 +45,10 @@
   
   /* Initialise the O(n) recursive tree traversal function, 
      starting with the root node. */
-  recurseTree(root);
+  recurseTree(root)
   
   // O(n) loop over every value within the dictionary.
-  for (var key in values) {
+  for (let key in values) {
       // If the value for the item matches the highest value.
       if (values[key] === mostValues) {
           // Push the item into the modes array.
@@ -58,4 +58,4 @@
   
   // Return all of the modes.
   return modes
-};
+}

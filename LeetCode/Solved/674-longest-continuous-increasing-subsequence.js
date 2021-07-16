@@ -6,7 +6,7 @@
  * @param {number[]} nums
  * @return {number} // the length of the LCIS
  */
- const findLengthOfLCIS = (nums) => {   
+ const findLengthOfLCIS = nums => {   
   // Keeps track of the LCIS.
   let result = 0
   // Keeps track of where to count back to when calculating the current LCIS.
@@ -22,12 +22,12 @@
           nums[i-1] >= nums[i]
       ) {
           // Set a new anchor value.
-          anchor = i;
+          anchor = i
       }
       
       // Determine the current LCIS by subtracting i (greatest) from anchor (smallest). 
       // + 1 to account for indices.
-      const currentResult = i - anchor + 1;
+      const currentResult = i - anchor + 1
       
       // Set a new result, to the greatest number between result and currentResult.
       result = Math.max(result, currentResult)
@@ -35,4 +35,4 @@
   
   // Found the LCIS, return it.
   return result
-};
+}

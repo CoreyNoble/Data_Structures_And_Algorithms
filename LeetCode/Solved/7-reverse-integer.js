@@ -8,7 +8,7 @@
  * @param {number} x
  * @return {number}
  */
- const reverse = (x) => {
+ const reverse = x => {
   // String representation of the number.
   let s = x.toString()
   // Array that will hold the reverse values of the number.
@@ -41,4 +41,4 @@
   
   // Return the reversed value.
   return reversed
-};
+}

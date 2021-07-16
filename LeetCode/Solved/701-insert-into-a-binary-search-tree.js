@@ -1,6 +1,6 @@
 /**
  * Definition for a binary tree node.
- * function TreeNode(val, left, right) {
+ * const TreeNode = (val, left, right) => {
  *     this.val = (val===undefined ? 0 : val)
  *     this.left = (left===undefined ? null : left)
  *     this.right = (right===undefined ? null : right)
@@ -12,13 +12,13 @@
  * @param {number} val
  * @return {TreeNode}
  */
- const insertIntoBST = function(root, val) {
+ const insertIntoBST = (root, val) => {
   // Edge case, root is empty.
   if (root === null) {
       // Create/return a node, using the current val.
       root = { val: val, left: null, right: null }
       
-      return root;
+      return root
   }
   
   // Initialise the recursive method to insert the node.
@@ -26,7 +26,7 @@
   
   // Node has been inserted, return the tree.
   return root
-};
+}
 
 /**
 * A recursive method that finds where a node should be inserted into a BST, and inserts the node.
@@ -34,7 +34,7 @@
 * @param {number} val
 * @return {void}
 */
-const recurseBST = function (node, val) {
+const recurseBST = (node, val) => {
   // Value is less than current node.
   if (val < node.val) {
       // A left node exists.

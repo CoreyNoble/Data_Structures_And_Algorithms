@@ -4,7 +4,7 @@
  * @param {number} target
  * @return {number[]}
  */
- var twoSum = function(nums, target) {
+ const twoSum = (nums, target) => {
   // Edge case: nums array or target values don't exist.
   if (!nums || target == null) return []
   
@@ -34,4 +34,4 @@
   
   // Return the indicies that add up to the target value.
   return indicies
-};
+}

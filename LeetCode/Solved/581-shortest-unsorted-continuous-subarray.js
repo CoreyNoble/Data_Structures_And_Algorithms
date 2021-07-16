@@ -3,13 +3,13 @@
  * @param {number[]} nums
  * @return {number} // the length of the sub-array
  */
- var findUnsortedSubarray = function(nums) {
+ const findUnsortedSubarray = nums => {
   // Array is too small, exit with 0.
-  if (nums.length < 2) return 0;
+  if (nums.length < 2) return 0
 
   // Initialise min and max values to the highest/lowest possible integers.
-  let minUnsortedValue = Infinity;
-  let maxUnsortedValue = -Infinity;
+  let minUnsortedValue = Infinity
+  let maxUnsortedValue = -Infinity
   
   // Find the miminim value that needs to be sorted.
   /* Start at the left side of the array, iterate right.
@@ -19,7 +19,7 @@
       // current value is less than the one before it.
       if (nums[i] < nums[i-1]) {
           // set the minimum value between the one found, and the one previously set.
-          minUnsortedValue = Math.min(minUnsortedValue, nums[i]);
+          minUnsortedValue = Math.min(minUnsortedValue, nums[i])
       }
   }
   
@@ -31,18 +31,18 @@
       // current value is greater than the one after it.
       if (nums[i] > nums[i+1]) {
           // set the maximum value between the one found, and the one previously set.
-          maxUnsortedValue = Math.max(maxUnsortedValue, nums[i]);
+          maxUnsortedValue = Math.max(maxUnsortedValue, nums[i])
       }
   }
   
-  let leftIdx;
-  let rightIdx;
+  let leftIdx
+  let rightIdx
   
   // Iterate front-to-back through the array to find where the minimum value should reside.
   for (leftIdx = 0; leftIdx < nums.length; leftIdx++) {
       // minimum is less than the index, the index is where the unsorted sub-array begins.
       if (minUnsortedValue < nums[leftIdx]) {
-          break;
+          break
       }
   }
   
@@ -50,11 +50,11 @@
   for (rightIdx = nums.length - 1; rightIdx >= 0; rightIdx--) {
       // maximum is less than the index, the index is where the unsorted sub-array ends.
       if (maxUnsortedValue > nums[rightIdx]) {
-          break;
+          break
       }
   }
 
   /* If right - left isn't a positive intiger, return 0.
      Otherwise, return right - left + 1 to account for 0 based indicies */
-  return rightIdx - leftIdx < 0 ? 0 : rightIdx - leftIdx + 1;
-};
+  return rightIdx - leftIdx < 0 ? 0 : rightIdx - leftIdx + 1
+}

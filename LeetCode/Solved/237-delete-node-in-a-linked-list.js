@@ -1,8 +1,8 @@
 /**
  * Definition for singly-linked list.
- * function ListNode(val) {
- *     this.val = val;
- *     this.next = null;
+ * const ListNode = val => {
+ *     this.val = val
+ *     this.next = null
  * }
  */
 /**
@@ -30,4 +30,4 @@
 
            The *next node now has nothing pointing to it, 
            therefore it is no longer a part of the linked list. */
-};
+}
