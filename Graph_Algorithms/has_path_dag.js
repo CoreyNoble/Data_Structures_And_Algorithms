@@ -17,12 +17,12 @@ const hasPathDFS = (graph, current, dst) => {
   for (let neighbour of graph[current]) {
     // Recursively call this method on each neighbour node. If a match is found...
     if (hasPath(graph, neighbour, dst) === true) {
-      // bubble up a 'true' response through each call on the call stack.
+      // Bubble up a 'true' response through each call on the call stack.
       return true
     }
   }
 
-  // A path doesn't exist.
+  // Recursed through every edge combination. A path doesn't exist.
   return false
 }
 
