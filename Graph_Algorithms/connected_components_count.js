@@ -28,7 +28,12 @@ const connectedComponentsCount = graph => {
  * @param {Node} current // The node we're exploring.
  * @param {Set} visited // A list of all the nodes that have been visited.
  */
-const expolore = (graph, current, visited) => {
+const explore = (graph, current, visited) => {
+  /* Need to check/add the values in the set as strings.
+     Doing this because the keys in the graph are set as as strings, 
+     but the values are not. This results in type differences when 
+     adding / checking the set. */
+
   // Node has already been visited, Skip exploration of this node.
   if (visited.has(String(current))) return false
 
