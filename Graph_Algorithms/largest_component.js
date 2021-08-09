@@ -15,7 +15,7 @@ const largestComponent = graph => {
     const size = exploreSize(graph, node, visited)
 
     // Update the largest value if the size of the connected nodes is bigger.
-    largest = Math.max(size, longest)
+    largest = Math.max(size, largest)
   }
 
   // Explored the entire graph, return the largest number of connected nodes.
