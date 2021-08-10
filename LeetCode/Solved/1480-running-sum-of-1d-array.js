@@ -1,7 +1,7 @@
 /**
  * Converts an array of numbers into a running sum array
  * For example: [1, 1, 1, 1, 1] becomes [1, 2, 3, 4, 5]
- *              [1, 2, 3, 4] becomes [1, 3, 6, 10]
+ *              [1, 2, 3, 4]    becomes [1, 3, 6, 10]
  *
  * @param {number[]} nums
  * @return {number[]}
