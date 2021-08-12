@@ -44,7 +44,13 @@ const hasPath = (graph, curr, dst, visited) => {
   return false
 }
 
-/* Converts an undirected edges list into an adjacenct list.
+/* Converts an undirected edges list into an adjacency list.
+ * For example:
+ * [ ['w', 'x']   becomes: { w: ['x', 'v'],
+ *   ['x', 'y']              x: ['w', 'y'],
+ *   ['z', 'y']              y: ['x', 'z'],
+ *   ['z', 'v']              z: ['y', 'v'],
+ *   ['w', 'v'] ]            v: ['z', 'w'] }
  * @param {array} edges // A list of undirected connections between nodes.
  * @returns {object} graph // An adjacency list representation of the graph.
  */
@@ -60,6 +66,8 @@ const buildGraph = edges => {
     graph[a].push(b)
     graph[b].push(a)
   }
+
+  return graph
 }
 
 /* Edge list for an undirected graph.
