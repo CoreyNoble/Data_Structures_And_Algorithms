@@ -34,21 +34,21 @@ const islandCount = grid => {
  */
 const explore = (grid, row, col, visited) => {
   // Row or column is out of bounds, no new land found.
-  const rowInBounds = row > 0 && row < grid.length
-  const colInBounds = col > 0 && col < grid.length
+  const rowInBounds = 0 <= row && row < grid.length
+  const colInBounds = 0 <= col && col < grid.length
   if (!rowInBounds || !colInBounds) return false
 
   // Tile is water, no new land found.
   if (grid[row][col] === 'w') return false
 
   // Tile has already been explored, no new land found.
-  const position = `${row},${col}`
-  if (visited.has(position)) return false
+  const pos = `${row},${col}`
+  if (visited.has(pos)) return false
 
   /* New land found! */
 
   // Mark the tile as visited.
-  visited.add(position)
+  visited.add(pos)
 
   // Recusively explore the entire island (all land touching this tile).
   explore(grid, row-1, col, visited) // Look up
